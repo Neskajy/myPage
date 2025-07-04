@@ -1,0 +1,30 @@
+.BurgerWindow {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    transition: .4s ease-in-out all;
+    background: rgba(0, 0, 0, .95);
+
+
+    &.active {
+        transition: .4s ease-in-out all;
+        left: 0;
+    }
+
+    .container {
+        width: 1440px;
+        margin-top: calc(120px);
+        
+    }
+    @media (max-width: 1500px) {
+        .container {
+            width: 95%;
+        }
+    }
+}

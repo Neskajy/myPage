@@ -1,0 +1,40 @@
+@use "/src/variables.scss" as vars;
+@font-face {
+    font-family: "Inter";
+    src: url("/src/assets/fonts/Inter/variable.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: "Inter";
+}
+
+
+body {
+    background: black;
+}
+
+* {
+    color: vars.$white;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    img {
+
+    }
+}

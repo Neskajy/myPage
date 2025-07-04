@@ -1,0 +1,110 @@
+@use "/src/variables.scss" as vars;
+
+.NavLeft {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+
+    .userInfo {
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+        .avatar {
+            width: 220px;
+            aspect-ratio: 1 / 1;
+            img {
+                width: 100%;
+            }
+            @media (max-width: 450px) {
+            width: 150px;
+            }
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            h2 {
+                font-size: vars.$h2-fsz;
+                font-weight: 600;
+            }
+            h4 {
+                font-size: vars.$h4-fsz;
+                font-weight: 600;
+            }
+        }
+    }
+    .nav {
+        margin-top: calc(120px - 24px);
+        .ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .li {
+                transition: .3s ease-in-out width;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .line {
+                    transition: .4s ease-in-out all;
+                    height: 1px;
+                    width: 35px;
+                    background: vars.$lilac
+                }
+                p {
+                    transition: .4s ease-in-out all;
+                    color: vars.$lilac;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+                &.active {
+                    p {
+                        color: vars.$white;
+                        transition: .4s ease-in-out all;
+                    }
+                    .line {
+                        transition: .4s ease-in-out all;
+                        width: 70px;
+                        background: vars.$white;
+                    }
+                }
+                &:hover {
+                    p {
+                        color: #c5d4ea;
+                        transition: .4s ease-in-out all;
+                    }
+                    .line {
+                        transition: .4s ease-in-out all;
+                        background: #c5d4ea;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .NavLeft {
+        width: 100%;
+        .userInfo {
+            width: 100%;
+            justify-content: space-between;
+        }
+        .nav {
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .NavLeft {
+        width: 100%;
+        .userInfo {
+            width: 100%;
+            flex-direction: column;
+            .nav {
+            }
+        }
+    }
+}
